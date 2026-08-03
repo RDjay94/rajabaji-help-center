@@ -6,9 +6,9 @@ window.RB_CONTENT = {
 
   /* ---------- CTAs / outbound links ---------- */
   links: {
-    download:    "https://rajabaji.net/",
-    play:        "https://rajabaji.net/",
-    liveChat:    "https://rajabaji.net/",
+    download:    "https://lg-media.jp-osa-1.linodeobjects.com/app_download/rajaBaji_1.2.13_live.apk",
+    play:        "https://h5.rajabaji.net/referral?referral_code=",
+    liveChat:    "https://secure.livechatinc.com/licence/13840602/v2/open_chat.cgi?groups",
     facebook:    "https://m.facebook.com/rajabajiofficial/",
     telegram:    "https://t.me/rajabaji_channel",
     downloadGif: "assets/img/cta-download.gif",
