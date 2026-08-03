@@ -18,6 +18,8 @@
     'back':'<path d="M19 12H5M11 18l-6-6 6-6"/>',
     'play-sm':'<circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4V8z" fill="currentColor" stroke="none"/>',
     'clock':'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    'dl':'<path d="M12 3v11"/><path d="m7.5 9.5 4.5 4.5 4.5-4.5"/><path d="M5 20h14"/>',
+    'tri':'<path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/>',
     'chat':'<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>',
     'telegram':'<path d="M21.9 5.2 18.7 19c-.2.9-.8 1.1-1.6.7l-4.3-3.2-2.1 2c-.2.2-.4.4-.9.4l.3-4.4L18 6.6c.3-.3-.1-.5-.5-.2L7.2 13 3 11.7c-.9-.3-.9-.9.2-1.3l17.4-6.7c.8-.3 1.5.2 1.3 1.5z" fill="currentColor" stroke="none"/>',
     'facebook':'<path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H17V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.6V13h2.7v8z" fill="currentColor" stroke="none"/>'
@@ -32,9 +34,19 @@
   /* ---------- CTA helpers ---------- */
   const L = C.links;
   const ext = 'target="_blank" rel="noopener noreferrer"';
+  function dlInner(sub){
+    return `<span class="cta-btn__sheen"></span>
+      <span class="cta-btn__ico">${svg('dl',2.4)}</span>
+      <span class="cta-btn__txt"><b>${t('downloadApp')}</b>${sub?`<i>${t('downloadSub')}</i>`:''}</span>`;
+  }
+  function playInner(sub){
+    return `<span class="cta-btn__sheen"></span>
+      <span class="cta-btn__ico">${svg('tri',0)}</span>
+      <span class="cta-btn__txt"><b>${t('playNow')}</b>${sub?`<i>${t('playSub')}</i>`:''}</span>`;
+  }
   function ctaGifs(){
-    return `<a class="cta-gif" href="${L.download}" ${ext} aria-label="${t('downloadApp')}"><img src="${L.downloadGif}" alt="${t('downloadApp')}" loading="lazy"></a>
-      <a class="cta-gif" href="${L.play}" ${ext} aria-label="${t('playNow')}"><img src="${L.playGif}" alt="${t('playNow')}" loading="lazy"></a>`;
+    return `<a class="cta-btn cta-btn--download" href="${L.download}" ${ext} aria-label="${t('downloadApp')}">${dlInner(true)}</a>
+      <a class="cta-btn cta-btn--play" href="${L.play}" ${ext} aria-label="${t('playNow')}">${playInner(true)}</a>`;
   }
   function socialBtns(){
     return `<a class="social-btn chat" href="${L.liveChat}" ${ext}>${svg('chat',2)}<span>${t('liveChat')}</span></a>
@@ -217,7 +229,7 @@
       <a class="rail-btn tg" href="${L.telegram}" ${ext} title="${t('telegram')}" aria-label="${t('telegram')}">${svg('telegram',2)}</a>
       <a class="rail-btn fb" href="${L.facebook}" ${ext} title="${t('facebook')}" aria-label="${t('facebook')}">${svg('facebook',2)}</a>`;
     const np = document.getElementById('navPlay');
-    if (np){ np.href = L.play; np.setAttribute('aria-label', t('playNow')); np.querySelector('img').alt = t('playNow'); }
+    if (np){ np.href = L.play; np.setAttribute('aria-label', t('playNow')); np.innerHTML = playInner(false); }
   }
 
   /* ---------- Language ---------- */
