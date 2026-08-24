@@ -137,6 +137,9 @@
     const tut = C.tutorials.find(x=>x.id===id);
     if(!tut){ app.innerHTML = `<div class="view wrap article"><p>${t('notFound')}</p><a class="btn btn-ghost" href="#/" style="margin-top:20px">${svg('back',2)} ${t('backToGuides')}</a></div>`; return; }
     const d = tut[state.lang];
+    // tut.video is either one file for both languages, or {en,bn} language cuts
+    const videoSrc = (typeof tut.video === 'string') ? tut.video
+                   : (tut.video[state.lang] || tut.video.en);
     const firstImg = tut.steps[0].img;
     const coverBg = `assets/img/steps/${tut.id}/_raw/${firstImg}`;   // clean, un-annotated frame
     const coverFallback = `assets/img/steps/${tut.id}/${firstImg}`;
@@ -174,7 +177,7 @@
 
       <div class="video-card">
         <video id="tutVideo" controls preload="metadata" playsinline poster="${coverFallback}">
-          <source src="${tut.video}" type="video/mp4">
+          <source src="${videoSrc}" type="video/mp4">
         </video>
         <button class="video-cover" id="videoCover" type="button" aria-label="${t('watchNow')}">
           <img class="cover-bg" src="${coverBg}" onerror="this.onerror=null;this.src='${coverFallback}'" alt="">
