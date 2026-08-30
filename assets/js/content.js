@@ -219,6 +219,54 @@ window.RB_CONTENT = {
       ]
     },
 
+    /* ===== DEPOSIT — USDT (CRYPTO) ===== */
+    {
+      id: "deposit-usdt",
+      category: "wallet",
+      icon: "wallet",
+      video: { en: "videos/deposit-usdt-en.mp4", bn: "videos/deposit-usdt-bn.mp4" },
+      duration: "1:30",
+      en: {
+        title: "How to Deposit (USDT)",
+        summary: "Buy USDT on Binance P2P with bKash, then send it to Rajabaji.",
+        intro: "No crypto yet? No problem. Buy USDT on Binance P2P using bKash or Nagad, then send it to your Rajabaji deposit address on the TRC20 network. The one thing to get right is the network — always check it reads TRC20 before you send."
+      },
+      bn: {
+        title: "কীভাবে ডিপোজিট করবেন (USDT)",
+        summary: "বিকাশ দিয়ে Binance P2P থেকে USDT কিনে রাজাবাজিতে পাঠান।",
+        intro: "ক্রিপ্টো নেই? সমস্যা নেই। বিকাশ বা নগদ দিয়ে Binance P2P থেকে USDT কিনুন, তারপর TRC20 নেটওয়ার্কে আপনার রাজাবাজি ডিপোজিট অ্যাড্রেসে পাঠান। শুধু একটি বিষয় খেয়াল রাখুন — পাঠানোর আগে নেটওয়ার্ক TRC20 আছে কিনা যাচাই করে নিন।"
+      },
+      steps: [
+        { img: "step-01.png",
+          en: { title: "Open Binance and tap Deposit", desc: "In the Binance app open your USDT wallet and tap Add USDT, then choose P2P Trading from the Select Deposit Method sheet." },
+          bn: { title: "Binance খুলে Deposit চাপুন", desc: "Binance অ্যাপে আপনার USDT ওয়ালেট খুলে ‘Add USDT’ চাপুন, তারপর ‘Select Deposit Method’ থেকে ‘P2P Trading’ বেছে নিন।" } },
+        { img: "step-02.png",
+          en: { title: "Filter by bKash, then tap Buy", desc: "Open the filter, set the payment method to bKash or Nagad and enter your amount. Pick a seller with good completion stats, then tap Buy." },
+          bn: { title: "বিকাশ ফিল্টার করে Buy চাপুন", desc: "ফিল্টার খুলে পেমেন্ট মেথডে বিকাশ বা নগদ দিন এবং পরিমাণ লিখুন। ভালো রেটিংয়ের সেলার বেছে নিয়ে ‘Buy’ চাপুন।" } },
+        { img: "step-03.png",
+          en: { title: "Enter the amount and place the order", desc: "Type how much you want to spend in BDT — Binance shows the USDT you'll receive. Check it, then tap Place Order." },
+          bn: { title: "পরিমাণ লিখে অর্ডার দিন", desc: "কত টাকা খরচ করবেন তা BDT-তে লিখুন — আপনি কত USDT পাবেন Binance তা দেখাবে। যাচাই করে ‘Place Order’ চাপুন।" } },
+        { img: "step-04.png",
+          en: { title: "Pay the seller, then upload proof", desc: "Send the exact amount from your bKash app to the wallet number shown, then tap Upload Payment Proof and attach your payment screenshot." },
+          bn: { title: "সেলারকে টাকা পাঠিয়ে প্রুফ দিন", desc: "দেখানো বিকাশ নম্বরে আপনার বিকাশ অ্যাপ থেকে ঠিক ওই পরিমাণ পাঠান, তারপর ‘Upload Payment Proof’ চেপে পেমেন্টের স্ক্রিনশট যুক্ত করুন।" } },
+        { img: "step-05.png",
+          en: { title: "Copy your Rajabaji USDT address", desc: "In Rajabaji open Deposit, choose Crypto Pay, then select USDT on the TRC20 network. Tap the copy icon next to the wallet address." },
+          bn: { title: "রাজাবাজির USDT অ্যাড্রেস কপি করুন", desc: "রাজাবাজিতে ডিপোজিট খুলে ‘Crypto Pay’ বেছে নিন, তারপর TRC20 নেটওয়ার্কে USDT সিলেক্ট করুন। ওয়ালেট অ্যাড্রেসের পাশের কপি আইকনে চাপুন।" } },
+        { img: "step-06.png",
+          en: { title: "Send from Binance on TRC20", desc: "Back in Binance tap Send, paste the address you copied, and make sure the network reads TRX (TRC20). Sending on the wrong network loses the funds." },
+          bn: { title: "Binance থেকে TRC20-তে পাঠান", desc: "Binance-এ ফিরে ‘Send’ চাপুন, কপি করা অ্যাড্রেসটি পেস্ট করুন, আর নেটওয়ার্ক অবশ্যই ‘TRX (TRC20)’ আছে কিনা দেখে নিন। ভুল নেটওয়ার্কে পাঠালে টাকা ফেরত পাওয়া যায় না।" } },
+        { img: "step-07.png",
+          en: { title: "Withdraw, then copy the TxID", desc: "Enter the amount, tap Withdraw and confirm with your authenticator code. Once it shows Completed, copy the Txid from the withdrawal details." },
+          bn: { title: "উইথড্র করে TxID কপি করুন", desc: "পরিমাণ লিখে ‘Withdraw’ চাপুন এবং অথেনটিকেটর কোড দিয়ে নিশ্চিত করুন। ‘Completed’ দেখালে উইথড্রয়াল ডিটেইলস থেকে Txid কপি করুন।" } },
+        { img: "step-08.png",
+          en: { title: "Paste the TxID and submit", desc: "Return to the Rajabaji deposit form, paste the TxID into the transaction hash field, upload your screenshot, then tap Submit." },
+          bn: { title: "TxID পেস্ট করে জমা দিন", desc: "রাজাবাজির ডিপোজিট ফর্মে ফিরে ট্রানজেকশন হ্যাশ ঘরে TxID পেস্ট করুন, স্ক্রিনশট আপলোড করুন, তারপর ‘জমা দিন’ চাপুন।" } },
+        { img: "step-09.png",
+          en: { title: "Deposit confirmed", desc: "You'll see the success message, and your balance is topped up once the transfer confirms on-chain — usually a couple of minutes." },
+          bn: { title: "ডিপোজিট সফল", desc: "সফল বার্তা দেখাবে, আর অন-চেইন কনফার্ম হলেই ব্যালেন্স যোগ হয়ে যাবে — সাধারণত কয়েক মিনিটের মধ্যে।" } }
+      ]
+    },
+
     /* ===== WITHDRAW ===== */
     {
       id: "withdraw",
